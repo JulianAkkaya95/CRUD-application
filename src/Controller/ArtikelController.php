@@ -22,6 +22,7 @@ class ArtikelController extends AbstractController
      * Holt alle Artikel aus der Datenbank.
      * @return Response
      * @Route("/artikel", name="getAllArtikel", methods={"GET","HEAD"})
+     * @Route("/")
      */
     public function getAllArtikel(): Response
     {
