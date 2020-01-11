@@ -1,0 +1,61 @@
+{% extends "base.html.twig" %}
+
+{% block title %}
+    Artikel Übersicht
+{% endblock %}
+
+{% block main %}
+    <h1>Artikelliste</h1>
+    <table>
+        <tr>
+            <th>Aktiv</th>
+            <th>ID</th>
+            <th>Produktname</th>
+            <th>letzte Bearbeitung</th>
+            <th>Bild vorhanden</th>
+        </tr>
+        {% for oneArtikel in artikel %}
+            <tr>
+                <td>
+                    {% if oneArtikel.isActive %}
+                        Ja
+                    {% else %}
+                        Nein
+                    {% endif %}
+                </td>
+                <td>{{ oneArtikel.getId }}</td>
+                <td>{{ oneArtikel.getProductName }}</td>
+                <td>{{ oneArtikel.getLastModified |date("d.m.Y G:i") }} Uhr</td>
+                <td>
+                    {% if oneArtikel.hasImage %}
+                        Ja
+                    {% else %}
+                        Nein
+                    {% endif %}
+                </td>
+                <td>
+                    <a href="delete/artikel/{{ oneArtikel.getId }}">
+                        <button>delete</button>
+                    </a>
+                </td>
+                <td>
+                    <a href="/edit/{{ oneArtikel.getId }}">
+                        <button>edit</button>
+                    </a>
+                </td>
+                <td>
+                    {% if oneArtikel.isActive %}
+                        <a href="/artikel/{{ oneArtikel.getId }}">
+                            <button>Detailansicht</button>
+                        </a>
+                    {% else %}
+                        <button disabled>Detailansicht</button>
+                    {% endif %}
+                </td>
+            </tr>
+        {% endfor %}
+    </table>
+    <a href="/edit/">
+        <button>+ Artikel hinzufügen</button>
+    </a>
+{% endblock %}

@@ -1,0 +1,18 @@
+{% extends "base.html.twig" %}
+
+{% block title %}
+    Artikel Detailansicht -  {{ artikel.getProductname }}
+{% endblock %}
+
+{% block main %}
+    <h1>{{ artikel.getProductname }}</h1>
+    <div class="metadata">
+        {{ artikel.getLastModified |date("d.m.Y G:i") }} Uhr
+    </div>
+    <div class="mainContent">
+        {{ artikel.getText }}
+        {% if artikel.getImage %}
+            <img src="{{ asset(artikel.getImagePath) }}" alt=""/>
+        {% endif %}
+    </div>
+{% endblock %}

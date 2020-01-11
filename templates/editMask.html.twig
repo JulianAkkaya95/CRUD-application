@@ -1,0 +1,21 @@
+{% extends "base.html.twig" %}
+
+{% block title %}
+    Artikel bearbeiten/hinzufügen
+{% endblock %}
+
+{% block main %}
+    <h1>Edit</h1>
+    <hr/>
+    {{ form_start(form) }}
+    <div class="formError">
+        {{ form_errors(form) }}
+    </div>
+    <div>
+        {{ form_row(form.is_active) }}
+        ID {{ artikel.getID }}
+        letzte Bearbeitung {{ artikel.getLastModified |date("d.m.Y G:i") }} Uhr
+    </div>
+    <hr/>
+    {{ form_end(form) }}
+{% endblock %}
