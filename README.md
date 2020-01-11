@@ -1,7 +1,8 @@
-# CRUD-application
+# CRUD-application  
 Simple CRUD Anwendung erstellt mit Symfony 5 und PHP 7.2.  
   
-URLs: 
+URLs:   
+  
 /artikel Zeigt alle Artikel an  
 /artikel/1 Zeigt die Detailseite des Artikels mit der ID 1 an.  
 /edit Führt zur Eingabe Maske, hier kann ein neuer Artikel erstellt werden.  
