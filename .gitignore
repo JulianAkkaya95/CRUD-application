@@ -15,5 +15,9 @@
 /phpunit.xml
 ###< symfony/phpunit-bridge ###
 
+
+/public/uploads/images/
+
 ### IDE
 .idea/
+
