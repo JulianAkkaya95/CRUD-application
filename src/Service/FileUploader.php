@@ -5,6 +5,10 @@ namespace App\Service;
 use Symfony\Component\HttpFoundation\File\Exception\FileException;
 use Symfony\Component\HttpFoundation\File\UploadedFile;
 
+/**
+ * Class FileUploader
+ * @package App\Service
+ */
 class FileUploader
 {
     private $targetDirectory;
@@ -18,12 +22,11 @@ class FileUploader
     {
         $originalFilename = pathinfo($file->getClientOriginalName(), PATHINFO_FILENAME);
         $fileName = $originalFilename.'-'.uniqid().'.'.$file->guessExtension();
-
         try {
             $file->move($this->getTargetDirectory(), $fileName);
         } catch (FileException $e) {
-        }
 
+        }
         return $fileName;
     }
 

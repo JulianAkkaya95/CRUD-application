@@ -3,6 +3,7 @@
 namespace App\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Validator\Constraints as Assert;
 
 /**
  * @ORM\Entity(repositoryClass="App\Repository\ArtikelRepository")
@@ -18,26 +19,42 @@ class Artikel
 
     /**
      * @ORM\Column(type="boolean")
+     * @Assert\NotBlank
      */
     private $isActive;
 
     /**
      * @ORM\Column(type="string", length=255)
+     * @Assert\NotBlank
+     * @Assert\Length(
+     *      min = 1,
+     *      max = 250
+     * )
      */
     private $productName;
 
     /**
      * @ORM\Column(type="datetime")
+     * @Assert\DateTime
      */
     private $lastModified;
 
     /**
      * @ORM\Column(type="text")
+     * @Assert\NotBlank
+     * @Assert\Length(
+     *      min = 0,
+     *      max = 600
+     * )
      */
     private $text;
 
     /**
      * @ORM\Column(type="string", length=255, nullable=true)
+     * @Assert\Length(
+     *      min = 0,
+     *      max = 255
+     * )
      */
     private $image;
 
