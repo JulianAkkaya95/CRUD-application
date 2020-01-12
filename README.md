@@ -4,7 +4,7 @@ Simple CRUD Anwendung erstellt mit Symfony 5 und PHP 7.2.
 URLs:
 
 > **/artikel** und **/**   
-Zeigen alle Artikel an
+Zeigen alle Artikel an.
    
 > **/artikel/1**  
 Zeigt die Detailseite des Artikels mit der ID 1 an.  
